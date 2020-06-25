@@ -1,0 +1,124 @@
+ipad simulator reports window create before app finished loading; this is prob the bug which I "fixed' with inputHack. Move setting up of keyboards for ipad from appDelegate to viewdidload; but check what is done for iPhone, which must be different??
+
+there is a constraint bug - in select  menu occurs in simulator for iphone 8+
+UIView:0x7fdaab716c40.width == - 16 -- but not in my xib??
+
+new version should
+
+--- keyboard input now seems to work for pattern and anagram
+       sel pt wrong for insertion on numLetters, , (allow , before but not after a comma
+       clean textChanged = possibly not needed at all for pattern and anag except for OKtoSearch
+       unlocked mode, enter char does not set the numLetters Field (cooment out from textChanged
+       
+       clear unlocked - does not empty all results and numResults fields???? (or does same search ! currentPattern not set!!!!!
+              which is now done in trim (modify, so bypassed
+             and is not searching on entry of chars !
+       fixed: (?)
+       --lengthlock flag should set fixed pattern flag but leave sel pt fixed - not working (sel needs resettin I think
+       --trim is wrong for unlocked mode - should only change if exceeds length
+       
+---- currently trying to get alphapadButton to do the parsing - ALL DONE???
+   insertion if comma is odd 3,3 allows ZZZ,ZZ, (and crash if add or delete more chars)
+   trimstring needs to have commas in correct places
+   crashes still?? 1. forward delete from last posn then backdelete - prob range error 
+   backspace needs to have trim string add - at end, 
+        and not delete comma (why doesnt current test for character at s0 not work?? (prob fixed, s0-1; forward delete works)  
+   clear button still needs to be made to work in lengthlock mode - ---- but with sel at 0 (modify to conform???
+      --- there is a method in UITextInput or some such.. [self textFieldShouldClear:patternField] (BOOL)
+      
+      modifytoconform - I think needs pattenField needs to be FirstResponder to set sel.
+      hmm still not enough. But Clear works to set sel (sometimes!!)
+            Maybe only works if editing that field; or at least mot editing some other field???
+
+modifypatterntoconform (or somewhere) 
+    clear pattern should set selection to start
+in alphapad with patternfield:
+    ignore , unless in posn
+    if alpha and in , posn, add it after , and advance selection
+    backdelete - dont delete comma in prop posn (just backspace); set selection poroperly
+
+foll done I think 
+
+1. put in  version file so we can tell what we are updating; and Settings Bundle (done) done
+
+2. install the users add/delete words to the new dictionaries! -only in launch??;\- and maybe alert
+with "apply these changes to just installed dictionary?" 
+     if user later downloads a library dictionary we could also alert that user has previously made changes to this dictionary
+
+3. report the users mod file back to our site if users allows - and set in the SettingsBundle
+
+4. in unlocked mode the number of letters should be set to current length if cleared - not a bug but clarified with message
+
+after install new dictionary or delete, if in Show Dictionaries update - done
+
+nb delete the userAdditions and UserDeletions files from bundle ??? where???
+
+we need notification for new dictionaries
+NB check that correct date for existing UserAdditions is created in userChanges - currently seems to be 1 Jan 2001
+alertPhone needs fixing - antialiasing, smaller size (nb bg is 255,255,230)
+needs position set on rotation
+also action to open Changes
+-show on launch if update available-when to hide -only when installed??
+
+delete multiple items -- fix parsing of OLD userDeletions - if a deletion started a 
+subsequent line not starting with digit or space is a continuation
+ ---- change setupuserchnges in way it parses userDeletions
+ ---- changes: can now format this better (strip foll \n,insert spaces.. or perhaps create Change dict here
+ ---- consequent fixes to writeUserChanges and addUserChangesTo array
+ 
+   
+bug in locked mode can insert , in any place, not corrected by parser
+
+---------
+
+
+bug 9,C,VG then clear pattern (and or anagram) does not research (or leaves patter unchanged?
+
+-- clear pattern while editing anagram or vv
+
+new black interface for iPad - check colors
+
+
+
+Localisation
+
+
+icon
+
+CAEncoder!!! needs to be found and recompiled!!!!
+
+--user dictionaries: unpack, install DONE
+but: changing name of bad CAdict doesn't seem to work  - does work?
+
+
+------ Done??
+
+download -file  - Done??
+Tests needed: prev version (downloaded or user installed - different!), install over current, bad files
+
+fix pattern and anagram conforming - empty if all -- 
+
+!lengthLockFlag not working!!!!
+
+
+re-install deleted userdict 
+
+--- main bug fixed but reinstall bundled dict does not set the the dict ?? check return err - was wrong now OK
+--- reinstall user crashes on close(filePtr) ??? why not catch error??? 
+ 
+    --- thinks Italiano is installed (come from b/g and in the installed list), but does not list in the dictPicker???
+    1. remove userDct then try to reinsta
+        we get "may be corrupted"!!! and thereafter on return from b/g, it think it is installed in 2 places, but does not list???
+        sounds like sourcePath is not correct for a userDict (at least when userDeleted
+
+
+(set dict from dictPicker should do doSearch - doesnt seem to always?? In partic when reinstalled!!! (also firsttime)
+try doSearch in setDictionary?
+ --- came up with curr dict set to a removed dict - but attempt to install it crashed???
+  --- again possibly recompiled a removed??
+
+
+
+
+check that updating dictionary to a later version updates theDictionaries correctly (sourcepath etc)
+fully test useradded dicts, removal etc

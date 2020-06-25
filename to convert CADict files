@@ -1,0 +1,19 @@
+To convert a CADict file eg Englist-2.5.CADict as output from CA to the individual word and phrase files
+
+if the CADict is on the web - will this work for a user import?
+
+1. uncomment NSLog statement in doImportDictionary
+
+2. Launch a simulator
+
+3  Import the dictionary by updating if in the web
+
+4. note where saved as in log
+
+5 delete the trailimg "Temp"; copy this address
+
+6. In terminal,cd to this address; open English
+
+7. open another Finder to the English files currently installed (use option click on entry in XCode)
+
+8. option copy from the simulator folder to the XCode source folder

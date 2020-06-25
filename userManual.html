@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Language" content="en-au" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <meta name="viewport" content="width=320"/>
+    
+<title>Crossword Assistant for iOS</title>
+</head>
+    
+
+<body style="width:100% padding: 20px" bgcolor="#E6E1C1">
+
+
+<h1><center><font color="#FF0000">CAiOS</font><br>Crossword Assistant for iOS</center></h1>
+
+<h4>New in this version 1.4</h4>
+1. Improved keyboard layout for recent devices.
+<br>
+2. Internal compatibility updates have been made to ensure CAiOS will continue to work in future releases of iOS.
+<br>
+
+<h4>New in this version 1.3</h4>
+1. To conform with Application Transport Security, introduced in iOS9, online definition look-ups using the insecure http protocol have been deprecated. As a consequence thefreedictionary.com site is no longer used; instead links to the Collins Dictionary and Merriam-Webster on-line dictionaries are included. The Collins dictionary has British English and American English variants: the language flags enable you to select between the two.
+<br>
+    2. CAiOS will now remember your last used settings for the number of letters, pattern and anagram.
+<br>
+    3. Addressed an issue where CAiOS may report a corrupted word file after an update or restore of the application.
+<h4>New in this version 1.2</h4>
+    1. You will be notified of the availability of a new version of one of your installed dictionaries (a ! will appear near the + button — check the Download new Dictionary item)<br>
+    2. Your corrections to dictionaries will be shared, to appear in new versions of the dictionaries<br>
+    3. Entry of patterns in locked mode is more intuitive — the full fixed length is indicated, and the cursor position behaves sensibly!<br>
+    4. Searches for phrases with the button "a b" no longer have to wait for the keyboard to be dismissed.<br>
+    
+<h4>How to use the program — patterns and anagrams</h4>
+    
+    a) First set the <strong>length</strong>, the number of letters for the required word. The length must be between 2 and 35.<br> 
+    
+    <blockquote><i>Example:</i> Type 7 into the length (number of letters) field. Immediately 38894 words phrases are displayed in the results field (in the English dictionary); tap the Done key to hide the keyboard. Actually although it finds all matches, only the first 1000 are displayed for speed.</blockquote>
+        
+    The length field can also be set to search for phrases — see below.<br> 
+    The length can also be set to adjust automatically from the entered pattern, using the lock button — see below.<br><br>
+    
+    Below the length entry appear two choices:<br><br>
+    
+    b)  the first field is for setting the <strong>pattern</strong>: here you fill in the known letters in their known positions. Use a dash - for an unknown letter: each dash is a "wild card" which matches any letter (there are two other wild cards, @ which matches any vowel including y, and $ which matches any consonant including y). CAiOS automatically add dashes to fill out the length (but see the lock button below). <br>
+    
+    <blockquote>Make any change to the pattern: for example tap in the pattern and type -B--R. As each character in the search pattern is changed, the search results are updated to show all words which match the new pattern. In this case there are just 14 words matching the pattern -B--R--  (and one phrase A BUM RAP - see below for displaying phrases). Often just two known letters can reduce the number of possibilities to a manageable number!</blockquote>
+    
+    c) the second field specifies an <strong>anagram</strong>. You can enter any alphabetic letters A-Z here, as well as the -@$ wildcard characters. CAiOS searches for all words of the given length, which use the letters in the anagram field in any order; if the pattern has any positions specified other than the - wild card, the search must also satisfy those requirements.
+    <blockquote>Enter S into the anagram field. The list of words found reduces 8, including OBSERVE</blockquote>
+    
+    If you enter <i>fewer</i> characters into the anagram field than the required length, all the entered letters must appear in the found words but the remaining entries are assumed to be -, matching any letters.<br><br>
+        
+    If you enter <i>more</i> characters than the word length, CAiOS will find all words matching the pattern and using only letters from the anagram. 
+
+    <blockquote>Enter SOBERV into the anagram field. Now just 3 words are found: OBSERVE OBVERSE and OBVERTS. Make the anagram field SOBERVT: now only OBVERTS is found. Make the anagram field SOBERVTE and again 3 words are found, since any 7 of the 8 letters can be used</blockquote>
+   
+    <blockquote><i>Example:</i> To find all words which can use the letters of the word RAINSPOUT, set the length to 9, clear the pattern field so it shows only dashes, but enter RAINSPOUT into the anagram field. In this case, 3 complete anagrams PROUSTIAN RAINSPOUT SUPINATOR are found. Now change the length to 8; CAiOS finds 14 8-letter words using the anagram letters. And 45 7-letter words, etc.</blockquote>
+    
+    <h4>Using the lock button to automatically set the word length</h4>
+    <img title ="lock button"alt="tfd" src="lock.tiff" />Tap the lock button to set it to unlocked
+    <img title ="lock button"alt="tfd" src="unlock.tiff"  />
+    
+    When the word length field is unlocked, the length is changed according to what you enter into the pattern field. Thus if you unlock the length and then clear the pattern, the length will also be cleared. As you type letters into the pattern field (or delete letters) the number of letters field changes to match the pattern.
+    <blockquote><i>Example:</i> You are playing a word game want to find all the words that can be made from a bunch of letter AEEGHTS together with some other letter already on the board. Set the button to unlocked, clear the pattern field and set number of letters to 8; now set the anagram field to AEEGHTS-. Unfortunately no 8 letter words. Tap in the pattern field and delete the last -: There are 44 7-letter solutions! Delete another - to find 225 6-letter solutions. Some of them may be proper names, perhaps not allowed in your game: but you may be able to use another dictionary, such as ENABLE, see below.</blockquote>
+
+    
+    <blockquote><i>Example:</i> To find the longest words with no repeated letters: Set the button to unlocked, and clear the number of letters and pattern fields. Enter ABCDEFGHIJKLMNOPQRSTUVWXZ into the anagram field. Now type a - into the pattern field; keep typing - : the number of letters increases by 1 for each -; and you will see the words of that length with no repeats (word length 1 is ignored). Continue until no more results are shown. You will find 2 words of length 15 : DERMATOGLYPHICS and UNCOPYRIGHTABLE (and also some phrases such as BREAKDOWN LIGHTS if the "ab" button is set to "a_b")</blockquote>
+
+    <blockquote><i>Example:</i> To find the longest words containing only consonants: Set the button to unlocked, and clear the number of letters, pattern fields and anagram fields. Now type a $ into the pattern field; keep typing $. The results max out at 7 with 4 words including RHYTHMS. (Strictly Y is used as a vowel here.) Similarly we could use @ to find long words consisting only of vowels; the longest have 6 letters AYEAYE and EUOUAE.</blockquote>
+        
+    <h4>Phrases</h4>
+    
+    Crossword Assistant allows you to search for phrases; the English dictionary has over 165000 phrases. However please be aware that currently only the English and Italian dictionaries (and some of the downloadable dictionaries) contain phrases; references to good public domain sources for phrases in other languages would most welcome. A <strong>comma</strong> in the length field indicates a word break.
+    
+    <blockquote><i>Example:</i> to search for the phrase A STITCH IN TIME SAVES NINE  enter 1,6,2,4,5,4 into the word length (number of letters) field. </blockquote>
+    
+    The anagram field ignores word breaks. If the length field is locked, the pattern field will automatically insert spaces at the correct places — a typed space or comma is ignored. However if the length field is unlocked, typing (or pasting) a space or a comma inserts a word break (shown as a comma).<br><br>
+    The "ab" button also enables searching for phrases. Tap on this button so that it shows "a_b"; in this mode word searches allow extra word break spaces in <i>any</i> position.  
+    <blockquote><i>Example:</i> Enter 5,6,4 into the length field, with empty pattern and anagram fields. With the button showing "ab", 38 phrases are found including for example RHODE ISLAND REDS. With the button showing "a_b", an extra 90 phrases are found, including A GAME TWO CAN PLAY: in this case an extra space is inserted in the 5 letter word, and also into the middle 6-letter word. </blockquote>
+    <blockquote><i>Please note</i> Searching for phrases allowing spaces in any position can be a little slow, so the keyboard may seem slightly unresponsive.
+    </blockquote>
+
+    <h4>Selecting the dictionary</h4>
+    Tap on the blue name of the <strong>current dictionary</strong> (initially English). You may select from a list of the installed dictionaries.<br> 
+
+    <h4>The + menu</h4>
+    Tap on the + button to reveal a menu from which you may choose to see information about the dictionaries (number of words and phrases, additions and deletions, versions), remove a dictionary if you never need it, or reinstall it, and also download new dictionaries from the Crossword Assistant web site.<br>
+    
+   <h4>More dictionaries</h4>
+    Dictionaries available for free download from the website are
+    
+    <blockquote>
+        <strong>English</strong>: the latest official version of the large English dictionary (version numbers are shown)
+        <strong>English (Hyphenated)</strong>:  a small list of hyphenated words in  English<br>
+        <strong>English (small)</strong>: a smaller English dictionary useful when the main dictionary gives too many results<br>
+        <strong>ENABLE</strong>: The Enhanced North American Benchmark LExicon, the "unofficial Scrabble® standard dictionary"<br>
+        <strong>UKACD</strong>: The UK Advanced Cryptics Dictionary (v 2.7).<br> 
+        <strong>Shakespeare</strong>: all words used by Shakespeare in his plays and poems, and as phrases all the lines of the poems<br>
+            
+        <strong>The Bible</strong>: all words from the Bible (King James version)<br>            
+        <strong>Reverse English</strong>: the English dictionary with words in reverse order<br>            
+            
+        <strong>Dante</strong>: The Divine Comedy, and all lines as phrases (medieval Italian)<br>            
+        <strong>Nihongo (Romanised)</strong>: A small Japanese word list<br>
+        <strong>Esperanto</strong>: A <i>very</i> rudimentary Esperanto dictionary <br><br>
+        and some Geographic dictionaries:<br>
+        <strong>World Rivers</strong><br>
+        <strong>US rivers</strong><br>
+        <strong>Rivers of Britain and Ireland</strong><br>
+        <strong>Australian Rivers</strong><br>
+        <strong>World cities</strong><br>
+        <strong>US towns</strong><br>
+        <strong>British towns</strong><br><br>
+        
+        as well as all the other language dictionaries.
+        
+        CAiOS will notify you when new versions of your installed dictionaries are available; they will appear at the top of the list of available dictionaries in red, followed by dictionaries which you have not installed in blue, and finally dictionaries for which you have already downloaded the latest version in black.
+
+        Please consult the website for information about the dictionaries, and copyright acknowledgments for their sources. 
+        </blockquote>
+
+        Good sources of reliable word lists (and most particularly phrase lists) are hard to find. Suggestions and contributions are most welcome; corrections (missing words and incorrectly included entries) and word lists for new dictionaries are greatly appreciated.<br><br>
+            
+        It is also possible to construct and install your own dictionaries; see the website for details.<br>
+        
+<p><h4>Adding and deleting words from a dictionary</h4>
+    To add a word or phrase which is missing from the dictionary, type the full word into the Pattern field; if the word is not found in the current dictionary, an "Add" button will appear.<br><br>
+    You may find words or phrases that you do not consider genuine words. Tap on the word or phrase to bring up a "Delete" button; you can also delete a selection of items. Be careful, there are some strange words like PNYX and XYST.<br><br>
+    
+    The deletion is permanent.  However all changes you have made to dictionaries are displayed using the "Changes" menu. So you can add items from this list back into the dictionary, or delete words that you added. Alternatively to undo <i>all</i> additions and deletions you can revert to the originally supplied dictionary using the "Install/Remove" pop-up menu item under the + button: first remove the dictionary and then re-install the original (NB you cannot remove the current dictionary, so if you want to delete it, first change the current dictionary). You may wish to make a note of any changes you made to the dictionary before re-installing the originally supplied one, in case there are corrections you want to re-apply.<br><br>
+    
+    Corrections you make to the dictionaries are shared (anonymously) with other users: after verification, they will appear in the next version of the dictionary so others can benefit from your corrections.  When a new dictionary version is <i>downloaded</i> from the website, all corrections you made to the old version are re-applied; if the correction is not necessary because the change has already been incorporated in the new version the change is removed from the list of "Changes".<br>
+    
+    </p>
+
+<p><h4>Definitions/Meanings</h4>
+    To look up the meaning or definition of word or phrase, double tap on the word (and if necessary extend the selection to the whole phrase). The system may have a definition for the word, in which case a "Define" button will appear; however the built-in dictionary is comparatively small. CAiOS will also show a "Definition" button; if you are connected to the internet, tap this to search for the item in a number of internet dictionary/encyclopedia/search engine sources:   </p>
+    <blockquote>
+    <img title ="Wiktionary"alt="w" src="wikipedia.png" style="vertical-align:middle"/>  Wiktionary <br>
+    <img title ="Google"alt="w" src="google.png" style="vertical-align:middle" /> Google <br>
+    <img title ="Collins Dictionary"alt="w" src="Collins.png" style="vertical-align:middle" /> Google <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  OneLook <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  URL 
+    </blockquote>
+    
+    The last source button labelled "URL" may be customized: type in your preferred url such as 
+   <center>http://myexcellentsource/*</center>
+    where the * stands for the item to be looked up.<br> 
+    
+    <br>The default setting for this button is Wikipedia  
+    <center>http://!.m.wikipedia.org/wiki/*</center> To reset to this default type <center>reset</center> into the url address.<br> 
+    <br>Two alternative settings can be made: the Merriam-Webster online dictionary
+        <center>http://www.webster-merriam.com/*</center>
+    To set the URL to this site type <center>dictionary</center> into the url address (or just d).
+    
+    <br> and the Encyclopaedia Brittanica
+        <center>http://www.brittanica.com/search?query=*</center>
+    To set the URL to this site type <center>britannica</center> into the url address (or just b).
+    
+    <p> The Wiki and Goggle sources may be customized to a particular language (English, Italian, German, French, Spanish, Dutch) by tapping the appropriate flag. If your custom url accepts a language designator (en,it,de,fr,es,nl) you may specify this with a ! symbol in the url as in the above Wikipedia example, or for Google http://google.com/search?q=*#q=*&hl=!
+    </p>
+    
+    <p> On occasion no source may be able to find a meaning for the item; this could happen for example if the word is a proper name for a person or place, or is a foreign or technical word or acronym not listed in the sources, or is part of a multi-word phrase or name; or it could be that the item isn't a real word at all and perhaps should be deleted from the CAiOS dictionary. Mis-spelt words can find their way into the CAiOS dictionaries, either because of an error in transcription, or because the misspelling actually occurs somewhere in a published article; in the latter case, as for "made-up" words not (yet) in general use, it is debatable whether they should be included or not.
+    
+    
+<h4>Copyright © Neville Smythe 2012-6 <a href="http://nmsmythe.id.au/CAiOS">http://nmsmythe.id.au/CAiOS</a></h4>
+    
+<h4>Contact the author at <a href="mailTo:neville@nmsmythe.id.au">Neville Smythe</a></h4>
+
+        
+</body>
+
+</html>
